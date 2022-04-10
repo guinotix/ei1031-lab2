@@ -22,7 +22,28 @@ class NivelesTest {
 
     static Stream<Arguments> datos() {
         return Stream.of(
-                Arguments.of("jugadores.txt", "equipos.txt", new Niveles(3, 50), 0)
+                Arguments.of("jugadores.txt", "equipos.txt", new Niveles(3, 50), 0),
+
+                // Tablas vacías
+                Arguments.of("jugadores0.txt", "equipos.txt", new Niveles(3, 50), 1),
+                Arguments.of("jugadores.txt", "equipos0.txt", new Niveles(3, 50), 1),
+                Arguments.of("jugadores0.txt", "equipos0.txt", new Niveles(3, 50), 1),
+
+                // Jugadores de un mismo equipo - codigo: 2
+                Arguments.of("jugadores1.txt", "equipos1.txt", new Niveles(3, 50), 2),
+
+                // Resto de casos
+                Arguments.of("jugadores2.txt", "equipos2.txt", new Niveles(3, 100), 0),
+                Arguments.of("jugadores3.txt", "equipos3.txt", new Niveles(3, 100), 0),
+                Arguments.of("jugadores4.txt", "equipos4.txt", new Niveles(3, 100), 0),
+
+                Arguments.of("jugadores2.txt", "equipos3.txt", new Niveles(3, 100), 0),
+                Arguments.of("jugadores3.txt", "equipos4.txt", new Niveles(3, 100), 0),
+                Arguments.of("jugadores4.txt", "equipos2.txt", new Niveles(3, 100), 0),
+
+                Arguments.of("jugadores2.txt", "equipos4.txt", new Niveles(3, 100), 0),
+                Arguments.of("jugadores3.txt", "equipos2.txt", new Niveles(3, 100), 0),
+                Arguments.of("jugadores4.txt", "equipos3.txt", new Niveles(3, 100), 0)
         );
     }
 
@@ -37,6 +58,7 @@ class NivelesTest {
 
         System.out.println("Codigo: " + codigo);
         System.out.println("Esperado: " + esperado);
+        System.out.println("");
 
         assertThat(codigo, is(esperado));
     }
