@@ -1,4 +1,4 @@
-package PaqueteJuego;
+package juego;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
