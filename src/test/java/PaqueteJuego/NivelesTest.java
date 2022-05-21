@@ -1,9 +1,5 @@
 package PaqueteJuego;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -36,11 +32,9 @@ class NivelesTest {
                 Arguments.of("jugadores2.txt", "equipos2.txt", new Niveles(3, 100), 0),
                 Arguments.of("jugadores3.txt", "equipos3.txt", new Niveles(3, 100), 0),
                 Arguments.of("jugadores4.txt", "equipos4.txt", new Niveles(3, 100), 0),
-
                 Arguments.of("jugadores2.txt", "equipos3.txt", new Niveles(3, 100), 0),
                 Arguments.of("jugadores3.txt", "equipos4.txt", new Niveles(3, 100), 0),
                 Arguments.of("jugadores4.txt", "equipos2.txt", new Niveles(3, 100), 0),
-
                 Arguments.of("jugadores2.txt", "equipos4.txt", new Niveles(3, 100), 0),
                 Arguments.of("jugadores3.txt", "equipos2.txt", new Niveles(3, 100), 0),
                 Arguments.of("jugadores4.txt", "equipos3.txt", new Niveles(3, 100), 0)
